@@ -16,7 +16,7 @@ private:
 
 public:
   HelloNode(const rclcpp::NodeOptions& options = rclcpp::NodeOptions())
-    : rclcpp::Node("filter_msg_node", options), count_(0)
+    : rclcpp::Node("hello", options), count_(0)
   {
     timer_ = this->create_wall_timer(std::chrono::milliseconds(1000), std::bind(&HelloNode::timer_callback, this));
 
