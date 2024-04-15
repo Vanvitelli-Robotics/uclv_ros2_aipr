@@ -15,8 +15,7 @@ private:
   int count_;
 
 public:
-  HelloNode(const rclcpp::NodeOptions& options = rclcpp::NodeOptions())
-    : rclcpp::Node("hello", options), count_(0)
+  HelloNode(const rclcpp::NodeOptions& options = rclcpp::NodeOptions()) : rclcpp::Node("hello", options), count_(0)
   {
     timer_ = this->create_wall_timer(std::chrono::milliseconds(1000), std::bind(&HelloNode::timer_callback, this));
 
@@ -36,7 +35,7 @@ public:
 
 }  // namespace uclv
 
-int main(int argc, char * argv[])
+int main(int argc, char* argv[])
 {
   rclcpp::init(argc, argv);
 

@@ -9,7 +9,7 @@
  * examples for the "new" recommended styles. This example is only included
  * for completeness because it is similar to "classic" standalone ROS nodes. */
 
-int main(int argc, char * argv[])
+int main(int argc, char* argv[])
 {
   // initialize ROS2
   rclcpp::init(argc, argv);
@@ -24,10 +24,10 @@ int main(int argc, char * argv[])
   rclcpp::WallRate loop_rate(std::chrono::milliseconds(1000));
 
   // the main loop
-  while (rclcpp::ok()) {
-
+  while (rclcpp::ok())
+  {
     // to stuff
-    count ++;
+    count++;
     RCLCPP_INFO_STREAM(node->get_logger(), "Hello World " << count);
 
     // spin is used to receive messages/service requests

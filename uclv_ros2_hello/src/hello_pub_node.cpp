@@ -27,7 +27,7 @@ public:
     // using namespace std::chrono_literals;  // needed to access operator(suffix) ms
     // timer_ = this->create_wall_timer(500ms, std::bind(&HelloPubNode::timer_callback, this));
 
-    publisher_ = this->create_publisher<std_msgs::msg::String>("hello",10);
+    publisher_ = this->create_publisher<std_msgs::msg::String>("hello", 10);
   }
 
   ~HelloPubNode() = default;
@@ -37,7 +37,7 @@ public:
     std_msgs::msg::String msg;
     count_++;
     msg.data = "Hello World " + std::to_string(count_);
-    
+
     RCLCPP_INFO_STREAM(this->get_logger(), msg.data);
 
     publisher_->publish(msg);
@@ -46,7 +46,7 @@ public:
 
 }  // namespace uclv
 
-int main(int argc, char * argv[])
+int main(int argc, char* argv[])
 {
   rclcpp::init(argc, argv);
 
