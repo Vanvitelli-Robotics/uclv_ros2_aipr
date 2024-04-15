@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
   // the main loop
   while (rclcpp::ok())
   {
-    // to stuff
+    // do stuff
     count++;
     RCLCPP_INFO_STREAM(node->get_logger(), "Hello World " << count);
 

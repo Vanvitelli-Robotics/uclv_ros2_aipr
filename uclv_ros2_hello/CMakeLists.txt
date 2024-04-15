@@ -32,11 +32,18 @@ add_executable(hello_pub src/hello_pub_node.cpp)
 ament_target_dependencies(hello_pub rclcpp std_msgs) # <-- add dependencies to the executable
 ###################################
 
+########## ADD executable hello_sub ############
+add_executable(hello_sub src/hello_sub_node.cpp)
+# !NOTE that we need the new dependency std_msgs!
+ament_target_dependencies(hello_sub rclcpp std_msgs) # <-- add dependencies to the executable
+###################################
+
 ########## INSTALL the executable ############
 install(TARGETS
   hello_class
   hello_noclass
   hello_pub
+  hello_sub
   DESTINATION lib/${PROJECT_NAME})
 ###################################
 
