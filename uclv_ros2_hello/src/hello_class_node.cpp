@@ -20,7 +20,7 @@ public:
   {
     timer_ = this->create_wall_timer(std::chrono::milliseconds(1000), std::bind(&HelloNode::timer_callback, this));
 
-    // alternative using operator""ms
+    // //* alternative using operator""ms *//
     // using namespace std::chrono_literals;  // needed to access operator(suffix) ms
     // timer_ = this->create_wall_timer(500ms, std::bind(&HelloNode::timer_callback, this));
   }
