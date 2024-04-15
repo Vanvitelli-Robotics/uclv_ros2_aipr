@@ -13,22 +13,30 @@ find_package(ament_cmake REQUIRED)
 
 ########## FIND rclcpp ############
 find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED) # <-- needed by hello_pub
 ###################################
 
-########## ADD executable ############
+########## ADD executable hello_class ############
 add_executable(hello_class src/hello_class_node.cpp)
 ament_target_dependencies(hello_class rclcpp) # <-- add dependencies to the executable
 ###################################
 
-########## ADD executable ############
+########## ADD executable hello_noclass ############
 add_executable(hello_noclass src/hello_noclass_node.cpp)
 ament_target_dependencies(hello_noclass rclcpp) # <-- add dependencies to the executable
+###################################
+
+########## ADD executable hello_pub ############
+add_executable(hello_pub src/hello_pub_node.cpp)
+# !NOTE! that we need the new dependency std_msgs!
+ament_target_dependencies(hello_pub rclcpp std_msgs) # <-- add dependencies to the executable
 ###################################
 
 ########## INSTALL the executable ############
 install(TARGETS
   hello_class
   hello_noclass
+  hello_pub
   DESTINATION lib/${PROJECT_NAME})
 ###################################
 
