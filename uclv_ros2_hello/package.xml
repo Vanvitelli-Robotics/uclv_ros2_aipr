@@ -5,12 +5,14 @@
   <version>1.0.0</version>
   <description>Hello world form UCLV</description>
   <maintainer email="marco.costanzo@unicampania.it">Marco Costanzo</maintainer>
-  <license>TODO: License declaration</license>
+  <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+  
+  <!-- This section should list all the dependencies -->
   <depend>rclcpp</depend>
-
   <depend>std_msgs</depend>
+  <!-- ........................................... -->
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

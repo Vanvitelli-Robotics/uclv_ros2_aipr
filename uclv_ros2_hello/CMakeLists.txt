@@ -11,7 +11,7 @@ find_package(ament_cmake REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-########## FIND rclcpp ############
+########## FIND dependencies ############
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED) # <-- needed by hello_pub
 ###################################

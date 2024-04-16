@@ -11,19 +11,22 @@
 
 int main(int argc, char* argv[])
 {
-  // initialize ROS2
+  // this instruction is needed to initialize the ROS2 framework for this executable
   rclcpp::init(argc, argv);
 
   // The Node object
   auto node = rclcpp::Node::make_shared("hello");
 
-  // the variable
+  // A toy variable
   int count = 0;
 
-  // the rate
+  // This object is responsable to keep the rate of a loop as close
+  // as possible to a prescribed period (1 second in this case)
   rclcpp::WallRate loop_rate(std::chrono::milliseconds(1000));
 
   // the main loop
+  // This is like a while(true)
+  // rclcpp::ok() is false when the node is killed or when we press CTRL-C
   while (rclcpp::ok())
   {
     // do stuff
@@ -31,13 +34,20 @@ int main(int argc, char* argv[])
     RCLCPP_INFO_STREAM(node->get_logger(), "Hello World " << count);
 
     // spin is used to receive messages/service requests
+    // calls all the callback associated to the node.
+    // It does not lock the execution, after the execution of the callback (if any)
+    // the program proceeds to the next code line
     rclcpp::spin_some(node);
+    // NOTE THAT: In this case we have no subscribers, thus NO callbaks.
+    // So, spin_some is like a "no operation". But it is a good practice to put
+    // a spin_some instructions in your loops.
 
-    // sleep on rate
+    // sleep such that to keep the loop rate to the prescribed value.
+    // This is not a simple sleep. It takes into account the compute time needed by the loop.
     loop_rate.sleep();
   }
 
-  // exit
+  // Cleanup the ROS2 framework for this process.
   rclcpp::shutdown();
   return 0;
 }
