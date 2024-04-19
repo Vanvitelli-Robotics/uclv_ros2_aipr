@@ -23,6 +23,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   # list all the .msg, .srv, and .action files to be generated...
   "msg/Num.msg"
   "msg/Sphere.msg"
+  "srv/AddTwoInts.srv"
   "srv/AddThreeInts.srv"
   # Add packages that above messages depend on
   DEPENDENCIES geometry_msgs # in this case geometry_msgs for Sphere.msg
