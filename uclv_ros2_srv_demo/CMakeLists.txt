@@ -11,6 +11,9 @@ find_package(rclcpp REQUIRED)
 find_package(uclv_ros2_demo_interfaces REQUIRED)
 ###################################
 
+# this is needed to add the include directory of this package to the include search path
+include_directories(include)
+
 ########## ADD executable add2ints_srv_noclass ############
 add_executable(add2ints_srv_noclass src/add2ints_srv_noclass_node.cpp)
 ament_target_dependencies(add2ints_srv_noclass rclcpp uclv_ros2_demo_interfaces) # <-- add dependencies to the executable
@@ -31,12 +34,18 @@ add_executable(add2ints_client src/add2ints_client_class_node.cpp)
 ament_target_dependencies(add2ints_client rclcpp uclv_ros2_demo_interfaces) # <-- add dependencies to the executable
 ###################################
 
+########## ADD executable add2ints_sync_client ############
+add_executable(add2ints_sync_client src/add2ints_sync_client_class_node.cpp)
+ament_target_dependencies(add2ints_sync_client rclcpp uclv_ros2_demo_interfaces) # <-- add dependencies to the executable
+###################################
+
 ########## INSTALL the executable ############
 install(TARGETS
   add2ints_srv_noclass
   add2ints_srv
   add2ints_client_noclass
   add2ints_client
+  add2ints_sync_client
   DESTINATION lib/${PROJECT_NAME})
 ###################################
 
