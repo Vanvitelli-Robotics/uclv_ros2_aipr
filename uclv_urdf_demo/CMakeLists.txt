@@ -21,6 +21,11 @@ install(DIRECTORY config
   DESTINATION share/${PROJECT_NAME})
 ################################################
 
+########## INSTALL the urdf files ############
+install(DIRECTORY urdf
+  DESTINATION share/${PROJECT_NAME})
+################################################
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
