@@ -52,7 +52,7 @@
 
    <!-- gripper -->
   <xacro:robotiq_arg2f_140 
-    prefix="robotiq_"
+    prefix="$(arg tf_prefix)robotiq_"
   />
 
 </robot>
