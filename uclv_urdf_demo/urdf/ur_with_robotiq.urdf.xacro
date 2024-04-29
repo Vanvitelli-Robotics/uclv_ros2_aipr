@@ -46,7 +46,7 @@
         <!-- Sometimes you need to modify the origin of the fixed joints -->
         <origin xyz="0 0 0" rpy="0 0 0" />
         <!-- <origin xyz="0 0 0" rpy="0 ${pi/2} 0" /> -->
-        <parent link="flange" />
+        <parent link="$(arg tf_prefix)flange" />
         <child link="$(arg tf_prefix)robotiq_base_link" />
     </joint>
 
