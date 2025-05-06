@@ -30,7 +30,7 @@ private:
   std_msgs::msg::String::ConstSharedPtr last_msg_;
 
 public:
-  HelloSubNode(const rclcpp::NodeOptions& options = rclcpp::NodeOptions()) : rclcpp::Node("hello_sub", options)
+  HelloSubNode(const rclcpp::NodeOptions& options = rclcpp::NodeOptions()) : rclcpp::Node("hello", options)
   {
     // In the constructor we create the subscripton object
 
