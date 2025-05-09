@@ -53,7 +53,7 @@ private:
         try
         {
           t = tf_buffer_->lookupTransform(toFrameRel, fromFrameRel, tf2::TimePointZero);
-          t = tf_buffer_->lookupTransform(toFrameRel, fromFrameRel, this->now());
+          // t = tf_buffer_->lookupTransform(toFrameRel, fromFrameRel, this->now());
           // t = tf_buffer_->lookupTransform(toFrameRel, fromFrameRel, this->now(), 500ms);
         }
         catch (const tf2::TransformException& ex)
