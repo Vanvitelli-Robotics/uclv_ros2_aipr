@@ -32,10 +32,32 @@ ament_target_dependencies(
 ) # <-- add dependencies to the executable
 ###################################
 
+########## ADD executable fibonacci_action_client_sync ############
+add_executable(fibonacci_action_client_sync src/fibonacci_action_client_sync.cpp)
+ament_target_dependencies(
+  fibonacci_action_client_sync 
+  "uclv_custom_action_interfaces"
+  "rclcpp"
+  "rclcpp_action"
+) # <-- add dependencies to the executable
+###################################
+
+########## ADD executable fibonacci_action_client_synccall_asyncspin ############
+add_executable(fibonacci_action_client_synccall_asyncspin src/fibonacci_action_client_synccall_asyncspin.cpp)
+ament_target_dependencies(
+  fibonacci_action_client_synccall_asyncspin 
+  "uclv_custom_action_interfaces"
+  "rclcpp"
+  "rclcpp_action"
+) # <-- add dependencies to the executable
+###################################
+
 ########## INSTALL the executable ############
 install(TARGETS
   fibonacci_action_server
   fibonacci_action_client
+  fibonacci_action_client_sync
+  fibonacci_action_client_synccall_asyncspin
   DESTINATION lib/${PROJECT_NAME})
 ###################################
 
