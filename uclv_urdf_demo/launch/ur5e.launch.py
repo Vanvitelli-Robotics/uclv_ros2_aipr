@@ -43,7 +43,7 @@ def generate_launch_description():
     ######### Run the robot_state_publisher ##############################
     # Here we call the launch file urdf_launch/launch/description.launch.py
     # It runs the robot_state_publisher_node
-    # Have a look in /opt/ros/humble/share/urdf_launch/launch/description.launch.py
+    # Have a look in /opt/ros/jazzy/share/urdf_launch/launch/description.launch.py
 
     # Find the path of the package 'urdf_launch'
     urdf_launch_package = FindPackageShare('urdf_launch')
